@@ -420,12 +420,12 @@ button {
 }
 
 a {
-  color: #1b89bc;
+  color: #a4cfe3;
   text-decoration: none;
 }
 
 a:hover {
-  color: #065b83;
+  color: #a4cfe3;
   text-decoration: underline;
 }
 
@@ -880,7 +880,7 @@ a:hover {
 }
 
 .text-primary {
-  color: #2d3e50 !important;
+  color:whitesmoke !important;
 }
 
 .text-info {

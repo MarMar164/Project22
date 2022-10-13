@@ -1,7 +1,7 @@
 [
   {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
+    "name": "HTML",
+    "description": "HTML is all about the skeleton. Use HTML to outline what your app will look like. Coding is fun.",
     "needed_funding": 5000
   },
   {
@@ -12,6 +12,6 @@
   {
     "name": "Roll 'Em Up",
     "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-    "needed_funding": 800
+    "needed_funding": 2000
   }
 ]
