@@ -1,31 +1,31 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class Symbol extends Model {}
 
-Project.init(
+Symbol.init(
   {
-    project: {
-      type: DataTypes.INTEGER,
+    Symbol: {
+      type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
     },
-    name: {
+    Name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.STRING,
-    },
+    Country: {
+     type: DataTypes.STRING,
+     allowNull: false, 
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'symbol',
   }
 );
 
-module.exports = Project;
+module.exports = Symbol;
