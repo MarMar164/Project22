@@ -1,3 +1,5 @@
+const submitButton = document.querySelector("#submit");
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -38,10 +40,30 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
+// front end fetch to backened for marquell goes here
+//
 
-document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+async function listTickers(params) {
+  const search = document.querySelector('#search-input').value.trim();
+// const needed_funding = document.querySelector('#project-funding').value.trim();
+// const description = document.querySelector('#project-desc').value.trim();
+
+if (search) {
+  const response = await fetch(`/api/stock/search`, {
+    method: 'POST',
+    body: JSON.stringify({search}),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  let data = await response.json() 
+ console.log(response)
+ console.log(data)
+//   if (response.ok) {
+//     document.location.replace('/profile');
+//   } else {
+//     alert('Unknown Stock');
+//   }
+ }
+}
+ submitButton.addEventListener('click', listTickers)
