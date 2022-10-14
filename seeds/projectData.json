@@ -1,7 +1,8 @@
 [
   {
-    "title": "HTML",
+    "name": "HTML",
     "description": "HTML is all about the skeleton. Use HTML to outline what your app will look like. Coding is fun."
+    "needed_funding": 5000
   },
   {
     "name": "The Ultimate Tech Quiz",
