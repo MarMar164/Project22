@@ -59,6 +59,7 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
+
     
     const articleData = await Article.findAll(
       { limit: 4 }
@@ -72,6 +73,12 @@ router.get('/profile', withAuth, async (req, res) => {
     res.render('profile', {
       ...user,
       articles,
+
+    console.log(req.query.search)
+    res.render('profile', {
+      ...user,
+      search: req.query.search,
+
       logged_in: true
     });
   } catch (err) {

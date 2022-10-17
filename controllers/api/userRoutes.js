@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Favorite } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -15,6 +15,17 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+router.post('/favorite', async (req, res) => {
+  try {
+    const userData = await Favorite.create({user_id:req.session.user_id , symbol_symbol: req.body.symbol});
+
+      res.status(200).json(userData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 
 router.post('/login', async (req, res) => {
   try {

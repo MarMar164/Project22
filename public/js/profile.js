@@ -75,13 +75,8 @@ async function listTickers(params) {
 // const description = document.querySelector('#project-desc').value.trim();
 
 if (search) {
-  const response = await fetch(`/api/stock/search`, {
-    method: 'POST',
-    body: JSON.stringify({search}),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  const response = window.location = `/profile/?search=${search}` 
+    
   let data = await response.json() 
  console.log(response)
  console.log(data)
