@@ -15,4 +15,11 @@ router.get('/stockNews', (req, res) => {
 });
 
 
+router.post('/search', (req, res) => {
+    console.log(req.body)
+    fetch(`https://financialmodelingprep.com/api/v3/search?query=${req.body.search}&limit=10&exchange=NASDAQ&apikey=${process.env.FinancialModel}`).then(data => data.json())
+    .then(data => res.json(data))
+  });
+
+
 module.exports = router;
