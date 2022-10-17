@@ -68,11 +68,9 @@ router.get('/profile', withAuth, async (req, res) => {
     
     // Serialize data so the template can read it
     const articles = articleData.map((article) => article.get({ plain: true }));
-    console.log('helloworld')
-    console.log(articles)
     res.render('profile', {
-      ...user,
       articles,
+    });
 
     console.log(req.query.search)
     res.render('profile', {
