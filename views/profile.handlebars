@@ -110,8 +110,43 @@
         <button type="submit" class="btn btn-primary">Create</button>
       </div> --}}
     </form>
+
+<div>
+  {{#if articles.length}}
+<div class="col-md-14 -list">
+<h3 style="color:whitesmoke">That New News</h3>
+<div>
+  {{#each articles as |article| }}
+      <h2>
+        <a href="/article/{{article.url}}">{{article.symbol}} | {{article.title}}</a>
+      </h2>
+      <div>
+      </div>
+      <p style="color:whitesmoke">Published: {{article.publishedDate}}</p>
+  {{/each}}
+</div>
+{{/if}}
+</div>
+</div>
+  {{!-- {{#if articles.length}}
+  <div class="col-md-6 -list">
+    <h3 style="color:whitesmoke">That New News</h3>
+    <div>
+      {{#each articles as |article| }}
+          <h2>
+            <a href="/article/{{article.url}}">{{article.symbol}} | {{article.title}}</a>
+          </h2>
+          <div>
+          </div>
+          <p style="color:whitesmoke">Published: {{article.publishedDate}}</p>
+      {{/each}}
+    </div>
+  {{/if}}
+  </div> --}}
+
   </div>
 </div>
+
 
   {{#if projects.length}}
   <div class="col-md-6 project-list">

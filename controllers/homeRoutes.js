@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Project, User, Article } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -60,9 +60,19 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
     console.log(req.query.search)
+    const articleData = await Article.findAll(
+      { limit: 4 }
+      // include: [{ model: Article }],
+    );
+    
+    // Serialize data so the template can read it
+    const articles = articleData.map((article) => article.get({ plain: true }));
+    console.log('helloworld')
+    console.log(articles)
     res.render('profile', {
       ...user,
       search: req.query.search,
+      articles,
       logged_in: true
     });
   } catch (err) {

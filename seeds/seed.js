@@ -1,9 +1,11 @@
 const sequelize = require('../config/connection');
-const { User, Project, Symbol } = require('../models');
+const { User, Project, Symbol, Article } = require('../models');
 
 const userData = require('./userData.json');
 const projectData = require('./projectData.json');
 const symbolData = require('./symbolData.json');
+const articleData = require('./articleData.json');
+
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -21,6 +23,9 @@ const seedDatabase = async () => {
   }
   
   await Symbol.bulkCreate(symbolData);
+
+  await Article.bulkCreate(articleData);
+
 
   
 
