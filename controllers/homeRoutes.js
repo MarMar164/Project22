@@ -59,6 +59,21 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
+
+    
+    const articleData = await Article.findAll(
+      { limit: 4 }
+      // include: [{ model: Article }],
+    );
+    
+    // Serialize data so the template can read it
+    const articles = articleData.map((article) => article.get({ plain: true }));
+    console.log('helloworld')
+    console.log(articles)
+    res.render('profile', {
+      ...user,
+      articles,
+
     console.log(req.query.search)
     const articleData = await Article.findAll(
       { limit: 4 }
@@ -79,6 +94,8 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
