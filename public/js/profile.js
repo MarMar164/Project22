@@ -1,4 +1,5 @@
-const submitButton = document.querySelector("#submit");
+const symbolButton = document.querySelector("#submit");
+const favoriteButton = document.querySelector("#favorite");
 
 const newFormHandler = async (event) => {
   event.preventDefault();
@@ -50,6 +51,30 @@ const articleHandler = async (event) => {
   }
 };
 
+const favoriteHandler = async (event) => {
+  event.preventDefault();
+
+  let params = (new URL(document.location)).searchParams;
+  let search = params.get('search');
+  console.log(search)
+
+  if (search) {
+    const response = await fetch(`/api/users/favorite`, {
+      method: 'POST',
+      body: JSON.stringify({ symbol: search }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    // if (response.ok) {
+    //   document.location.replace('/profile');
+    // } else {
+    //   alert('Failed to create project');
+    // }
+  }
+};
+
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -87,4 +112,5 @@ if (search) {
 //   }
  }
 }
- submitButton.addEventListener('click', listTickers)
+ symbolButton.addEventListener('click', listTickers)
+ favoriteButton.addEventListener('click', favoriteHandler)

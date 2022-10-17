@@ -18,10 +18,11 @@ router.post('/', async (req, res) => {
 
 router.post('/favorite', async (req, res) => {
   try {
-    const userData = await Favorite.create({user_id:req.session.user_id , symbol_symbol: req.body.symbol});
+    const userData = await Favorite.create({userId:req.session.user_id , symbolSymbol: req.body.symbol});
 
       res.status(200).json(userData);
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });

@@ -44,6 +44,9 @@
 <input class="input is-medium" type="text" placeholder="Enter Ticker Name" id="search-input">
 <button class="button is-link" id="submit">Submit</button>
 {{!-- Submit Button --}}
+{{!-- Favorite Button --}}
+<button class="button is-link" id="favorite">Favorite</button>
+{{!-- Favorite Button --}}
 <div class="row">
   <div class="col-auto">
     <h2 style="color:whitesmoke">Welcome, {{name}}!</h2>
@@ -121,14 +124,16 @@
   );
   </script>
 </div>
+</form>
+
 <!-- TradingView Widget END -->
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        {{!-- <input class="form-input" type="text" id="project-name" name="project-name" />
       </div>
       <div class="form-group">
         <label for="top-performers" style="color:whitesmoke">Top Performers:</label>
         <input class="form-input" type="number" id="project-funding" name="project-funding" />
 
-      </div>
+      </div> --}}
       {{!-- <div class="form-group">
         <label for="project-desc">description:</label>
         <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
@@ -136,7 +141,6 @@
       {{!-- <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div> --}}
-    </form>
 
 <div>
   {{#if articles.length}}
