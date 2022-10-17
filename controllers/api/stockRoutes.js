@@ -14,5 +14,4 @@ router.get('/stockNews', (req, res) => {
     .then(data => res.json(data))
 });
 
-
 module.exports = router;

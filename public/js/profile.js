@@ -22,6 +22,32 @@ const newFormHandler = async (event) => {
   }
 };
 
+const articleHandler = async (event) => {
+  event.preventDefault();
+
+  const title = document.querySelector('#article-title').value.trim();
+  const symbol = document.querySelector('#article-symbol').value.trim();
+  const publishedDate = document.querySelector('#article-publishedDate').value.trim();
+  const image = document.querySelector('#article-image').value.trim();
+  const url = document.querySelector('#article-url').value.trim();
+
+  if (title && symbol && publishedDate && image && url) {
+    const response = await fetch(`/api/projects`, {
+      method: 'POST',
+      body: JSON.stringify({ title, symbol, description }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to create project');
+    }
+  }
+};
+
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
