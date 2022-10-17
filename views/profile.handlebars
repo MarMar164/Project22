@@ -57,13 +57,13 @@
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/EURUSD/?exchange=FX" rel="noopener" target="_blank"><span class="blue-text">EURUSD Rates</span></a> by TradingView</div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/EURUSD/?exchange=FX" rel="noopener" target="_blank"></a></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
   {
-  "symbol": "NASDAQ:MSFT",
+  "symbol": "NASDAQ:{{search}}",
   "width": "200",
   "colorTheme": "dark",
-  "isTransparent": false,
+  "isTransparent": true,
   "locale": "en"
 }
   </script>
@@ -81,7 +81,7 @@
   new TradingView.widget(
   {
   "autosize": true,
-  "symbol": "NASDAQ:TWOU",
+  "symbol": "NASDAQ:{{search}}",
   "interval": "D",
   "timezone": "Etc/UTC",
   "theme": "dark",
@@ -111,6 +111,7 @@
       </div> --}}
     </form>
   </div>
+</div>
 
   {{#if projects.length}}
   <div class="col-md-6 project-list">
@@ -128,6 +129,5 @@
     {{/each}}
   </div>
   {{/if}}
-</div>
 
 <script src="/js/profile.js"></script>
