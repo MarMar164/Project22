@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project, User, Article } = require('../models');
+const { Project, User, Article, Favorite, Symbol } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -55,11 +55,13 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: Project }, {model: Symbol}],
+
+
     });
 
     const user = userData.get({ plain: true });
-
+console.log(user)
     
     const articleData = await Article.findAll(
       { limit: 4 }
@@ -77,6 +79,7 @@ router.get('/profile', withAuth, async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+    console.log(err)
   }
 });
 
