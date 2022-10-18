@@ -3,31 +3,32 @@
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Stock Watcher</title>
+    <title>Stock Stalker</title>
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
     <link
       href='https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian&family=Roboto+Condensed:wght@700&display=swap'
       rel='stylesheet'
     />
-    <link rel='stylesheet' href='/css/jass.css' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    {{!-- <link rel='stylesheet' href='/css/jass.css' /> --}}
     <link rel='stylesheet' href='/css/style.css' />
   </head>
 
   <body>
-    <div class='flex-column justify-space-around'>
-      <header class='display-flex justify-space-between align-center p-2'>
+    <div>
+      <header>
         <h1>
-          <a href='/' style='color:whitesmoke'>Stock Watcher</a>
+          <a href='/' style='color:whitesmoke'>Stock Stalker</a>
         </h1>
         <nav>
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
             <a href='/profile'>profile</a>
             |
-            <button class='no-button' id='logout'>logout</button>
+            <button class='no-button' id='logout' style="color:black">logout</button>
           {{else}}
-            <a href='/login' style='color:black '>login</a>
+            <a href='/login' style='color:rgb(255, 255, 255) '>login</a>
           {{/if}}
         </nav>
       </header>

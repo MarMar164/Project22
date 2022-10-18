@@ -1,232 +1,161 @@
 <!-- TradingView Widget BEGIN -->
 
-<div>
+
 <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/" rel="noopener" target="_blank"></a> </div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/" rel="noopener"
+      target="_blank"></a> </div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-  {
-  "symbols": [
     {
-      "proName": "FOREXCOM:SPXUSD",
-      "title": "S&P 500"
-    },
-    {
-      "proName": "FOREXCOM:NSXUSD",
-      "title": "US 100"
-    },
-    {
-      "proName": "FX_IDC:EURUSD",
-      "title": "EUR/USD"
-    },
-    {
-      "proName": "BITSTAMP:BTCUSD",
-      "title": "Bitcoin"
-    },
-    {
-      "proName": "BITSTAMP:ETHUSD",
-      "title": "Ethereum"
+      "symbols": [
+        {
+          "proName": "FOREXCOM:SPXUSD",
+          "title": "S&P 500"
+        },
+        {
+          "proName": "FOREXCOM:NSXUSD",
+          "title": "US 100"
+        },
+        {
+          "proName": "FX_IDC:EURUSD",
+          "title": "EUR/USD"
+        },
+        {
+          "proName": "BITSTAMP:BTCUSD",
+          "title": "Bitcoin"
+        },
+        {
+          "proName": "BITSTAMP:ETHUSD",
+          "title": "Ethereum"
+        }
+      ],
+        "showSymbolLogo": true,
+          "colorTheme": "dark",
+            "isTransparent": false,
+              "displayMode": "adaptive",
+                "locale": "en"
     }
-  ],
-  "showSymbolLogo": true,
-  "colorTheme": "dark",
-  "isTransparent": false,
-  "displayMode": "adaptive",
-  "locale": "en"
-}
   </script>
 </div>
-<!-- TradingView Widget END --></div>
+<!-- TradingView Widget END -->
+</div>
 
 
 {{!-- Submit Button --}}
-<input class="input is-medium" type="text" placeholder="Enter Ticker Name" id="search-input">
+<input class="input is-medium" type="text" placeholder="Enter Ticker Name" id="search-input" style="width:25%">
 <button class="button is-link" id="submit">Submit</button>
 {{!-- Submit Button --}}
 {{!-- Favorite Button --}}
 <button class="button is-link" id="favorite">Favorite</button>
 {{!-- Favorite Button --}}
-<div class="row">
-  <div class="col-auto">
-    <h2 style="color:whitesmoke">Welcome, {{name}}!</h2>
-    
-  </div>
+
+<div>
+  <h2 style="color:whitesmoke">Welcome Stalker!</h2>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
 
-      {{!-- TradingView Widget Favortie --}}
-      <h3 style="color:whitesmoke">Favorite Stocks</h3>
- {{#each symbols as |symbol|}}
+
+
+
+{{!-- TradingView Widget Favortie --}}
+<div class="columns">
+  <div class="column">
+<h3 style="color:whitesmoke">Favorite Stocks</h3>
+{{#each symbols as |symbol|}}
 
 {{!-- <h1>{{symbol.Symbol}}</h1>> --}}
 
-   <div class="tradingview-widget-container">
+<div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/EURUSD/?exchange=FX" rel="noopener" target="_blank"></a></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/EURUSD/?exchange=FX"
+      rel="noopener" target="_blank"></a></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
-  {
-  "symbol": "NASDAQ:{{symbol.Symbol}}",
-  "width": "200",
-  "colorTheme": "dark",
-  "isTransparent": true,
-  "locale": "en"
-}
+    {
+      "symbol": "NASDAQ:{{symbol.Symbol}}",
+        "width": "200",
+          "colorTheme": "dark",
+            "isTransparent": true,
+              "locale": "en"
+    }
   </script>
 </div>
-  {{/each}}
+{{/each}}
 
-    <h3 style="color:whitesmoke">Currently Selected</h3>
+<h3 style="color:whitesmoke">Currently Selected</h3>
+
+
+
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/EURUSD/?exchange=FX" rel="noopener" target="_blank"></a></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/EURUSD/?exchange=FX"
+      rel="noopener" target="_blank"></a></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
-  {
-  "symbol": "NASDAQ:{{search}}",
-  "width": "200",
-  "colorTheme": "dark",
-  "isTransparent": true,
-  "locale": "en"
-}
+    {
+      "symbol": "NASDAQ:{{search}}",
+        "width": "200",
+          "colorTheme": "dark",
+            "isTransparent": true,
+              "locale": "en"
+    }
   </script>
-
-
-
-
+</div>
 </div>
 <!-- TradingView Widget END -->
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="stock-news" style="color:whitesmoke">Your current stocks</label>
-        <!-- TradingView Widget BEGIN -->
-
-        <div class="tradingview-widget-container">
-          <div id="tradingview_d66ed"></div>
-          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/"
-              rel="noopener" target="_blank"></a> by TradingView</div>
-          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-          <script type="text/javascript">
-            new TradingView.widget(
-              {
-                "autosize": true,
-                "symbol": "NASDAQ:TWOU",
-                "interval": "D",
-                "timezone": "Etc/UTC",
-                "theme": "light",
-                "style": "1",
-                "locale": "en",
-                "toolbar_bg": "#f1f3f6",
-                "enable_publishing": false,
-                "allow_symbol_change": true,
-                "container_id": "tradingview_d66ed"
-              }
-            );
-          </script>
-        </div>
-        <!-- TradingView Widget END -->
 
 
 
 
-<div class="tradingview-widget-container">
-  <div id="tradingview_efa88"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.widget(
-  {
-  "autosize": true,
-  "symbol": "NASDAQ:{{search}}",
-  "interval": "D",
-  "timezone": "Etc/UTC",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "allow_symbol_change": true,
-  "container_id": "tradingview_d66ed"
-}
-  );
-  </script>
-</div>
+<!-- TradingView Widget END -->
+
+
+<section class="container px-6mx-6">
+  <div class="tradingview-widget-container">
+    <div id="tradingview_efa88"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener"
+        target="_blank"></a> by TradingView</div>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+      new TradingView.widget(
+        {
+          "autosize": true,
+          "symbol": "NASDAQ:{{search}}",
+          "interval": "D",
+          "timezone": "Etc/UTC",
+          "theme": "dark",
+          "style": "1",
+          "locale": "en",
+          "toolbar_bg": "#f1f3f6",
+          "enable_publishing": false,
+          "allow_symbol_change": true,
+          "container_id": "tradingview_d66ed"
+        }
+      );
+    </script>
+  </div>
+</section>
 </form>
+</div>
 
-<!-- TradingView Widget END -->
-        {{!-- <input class="form-input" type="text" id="project-name" name="project-name" />
-      </div>
-      <div class="form-group">
-        <label for="top-performers" style="color:whitesmoke">Top Performers:</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-
-      </div> --}}
-      {{!-- <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div> --}}
-      {{!-- <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div> --}}
 
 <div>
   {{#if articles.length}}
-<div class="col-md-14 -list">
-<h3 style="color:whitesmoke">That New News</h3>
-<div>
-  {{#each articles as |article| }}
+  <div class="col-md-14 -list">
+    <h3 style="color:whitesmoke">That New News</h3>
+    <div>
+      {{#each articles as |article| }}
       <h2>
         <a href="/article/{{article.url}}">{{article.symbol}} | {{article.title}}</a>
       </h2>
       <div>
       </div>
       <p style="color:whitesmoke">Published: {{article.publishedDate}}</p>
-  {{/each}}
-</div>
-{{/if}}
-</div>
-</div>
-  {{!-- {{#if articles.length}}
-  <div class="col-md-6 -list">
-    <h3 style="color:whitesmoke">That New News</h3>
-    <div>
-      {{#each articles as |article| }}
-          <h2>
-            <a href="/article/{{article.url}}">{{article.symbol}} | {{article.title}}</a>
-          </h2>
-          <div>
-          </div>
-          <p style="color:whitesmoke">Published: {{article.publishedDate}}</p>
       {{/each}}
     </div>
-  {{/if}}
-  </div> --}}
-
-  </div>
-</div>
+    {{/if}}
 
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
 
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-<div>
-</div>
 
-<script src="/js/profile.js"></script>
 
-<script src="/js/profile.js"></script>
-
+    <script src="/js/profile.js"></script>
